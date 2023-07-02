@@ -8,7 +8,7 @@ def run_query(query, variables, header, auto_retry):
     def _run_query(query, variables, header, auto_retry, seconds): 
         json_request = {'query': query, 'variables': variables}
         try:
-            request = requests.post(url='https://api.smash.gg/gql/alpha', json=json_request, headers=header)
+            request = requests.post(url='https://api.start.gg/gql/alpha', json=json_request, headers=header)
             if request.status_code == 400:
                 raise RequestError
             elif request.status_code == 429:
